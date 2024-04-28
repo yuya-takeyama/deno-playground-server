@@ -4,7 +4,7 @@ const kv = await Deno.openKv();
 const keys = ['access_counter'];
 
 serve(async function handleRequest(request: Request): Promise<Response> {
-  const counter = await kv.get([keys]);
+  const counter = await kv.get(keys);
   const count = Number(counter) + 1;
   
   await kv.set(keys, count);
