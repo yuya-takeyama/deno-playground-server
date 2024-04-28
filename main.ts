@@ -7,6 +7,7 @@ serve(async function handleRequest(request: Request): Promise<Response> {
   const counter = await kv.get(keys);
   console.log(`counter: ${JSON.stringify(counter)}`);
   const count = Number(counter.value) + 1;
+  console.log(`count: ${JSON.stringify(count)}`)
   
   await kv.set(keys, count);
 
