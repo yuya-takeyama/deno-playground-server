@@ -11,7 +11,7 @@ serve(async function handleRequest(request: Request): Promise<Response> {
   const newCount = count + 1;
   console.log(`newCount: ${JSON.stringify(newCount)}`);
   
-  await kv.set(keys, count);
+  await kv.set(keys, newCount);
 
   return new Response(`This page has been visited ${count} times.`);
 });
